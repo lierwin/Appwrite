@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Appwrite",
   "main": "src/main.js",
-  "author": "eooce",
+  "author": "oldwang",
   "license": "MIT",
   "private": false,
   "scripts": {
