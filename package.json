@@ -1,18 +1,19 @@
 {
-  "name": "nodejs",
+  "name": "node-ws",
   "version": "1.0.0",
-  "description": "Appwrite",
-  "main": "src/main.js",
-  "author": "oldwang",
-  "license": "MIT",
+  "description": "Node.js Server",
+  "main": "main.js",
+  "author": "eooce",
+  "license": "GPL-3.0",
   "private": false,
   "scripts": {
     "start": "node src/main.js"
   },
   "dependencies": {
-    "axios": "latest"
+    "ws": "^8.14.2",
+    "axios": "^1.12.2"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=14"
   }
 }
