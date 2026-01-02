@@ -1,17 +1,18 @@
 {
-  "name": "nodews",
+  "name": "nodejs",
   "version": "1.0.0",
-  "description": "Nodejs-server",
-  "main": "index.js",
+  "description": "Appwrite",
+  "main": "src/main.js",
+  "author": "asd",
+  "license": "MIT",
   "private": false,
   "scripts": {
-    "start": "node index.js"
+    "start": "node src/main.js"
   },
   "dependencies": {
-    "ws": "^8.14.2",
-    "axios": "^1.12.2"
+    "axios": "latest"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=18"
   }
 }
