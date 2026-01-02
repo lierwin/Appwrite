@@ -6,8 +6,8 @@ on:
     paths:
       - 'src/main.js'
       - 'package.json'
-      - 'main/Dockerfile'
-      - 'main/index.html'
+      - 'Dockerfile'
+      - 'index.html'
   workflow_dispatch:
 
 permissions:
@@ -33,8 +33,8 @@ jobs:
         for file in \
           src/main.js \
           package.json \
-          main/Dockerfile \
-          main/index.html
+          Dockerfile \
+          index.html
         do
           if [ ! -f "$file" ]; then
             echo "❌ Missing file: $file"
@@ -45,31 +45,18 @@ jobs:
 
     - name: Display file info
       run: |
-        echo "📋 Files to be packaged:"
+        echo "📋 Root files:"
+        ls -la
+        echo "📁 src/"
         ls -la src/
-        ls -la main/
-
-    - name: Create package directory
-      run: |
-        mkdir -p Appwrite/src Appwrite/main
-
-    - name: Copy files to package directory
-      run: |
-        cp src/main.js Appwrite/src/
-        cp package.json Appwrite/
-        cp main/Dockerfile Appwrite/main/
-        cp main/index.html Appwrite/main/
-
-        echo "📁 Appwrite directory structure:"
-        find Appwrite -type f
 
     - name: Create deployment archive
       run: |
         tar -czf Appwrite.tar.gz \
-          Appwrite/src/main.js \
-          Appwrite/package.json \
-          Appwrite/main/Dockerfile \
-          Appwrite/main/index.html
+          src/main.js \
+          package.json \
+          Dockerfile \
+          index.html
 
         echo "📦 Archive created: Appwrite.tar.gz"
         echo "📊 Size: $(du -h Appwrite.tar.gz | cut -f1)"
@@ -84,13 +71,13 @@ jobs:
         cat > release_notes.md << EOF
         ## 🚀 Appwrite Functions 部署包
 
-        **包含内容：**
+        **包含文件：**
         - src/main.js
         - package.json
-        - main/Dockerfile
-        - main/index.html
+        - Dockerfile
+        - index.html
 
-        上传到 Appwrite Functions 直接使用。
+        直接上传 Appwrite 使用
         EOF
 
     - name: Create or Update Release
