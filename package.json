@@ -1,13 +1,11 @@
 {
-  "name": "node-ws",
+  "name": "nodews",
   "version": "1.0.0",
-  "description": "Node.js Server",
-  "main": "main.js",
-  "author": "eooce",
-  "license": "GPL-3.0",
+  "description": "Nodejs-server",
+  "main": "index.js",
   "private": false,
   "scripts": {
-    "start": "node src/main.js"
+    "start": "node index.js"
   },
   "dependencies": {
     "ws": "^8.14.2",
