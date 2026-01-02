@@ -6,6 +6,8 @@ on:
     paths:
       - 'src/main.js'
       - 'package.json'
+      - 'index.html'
+      - 'Dockfile'
   workflow_dispatch:
 
 permissions:
